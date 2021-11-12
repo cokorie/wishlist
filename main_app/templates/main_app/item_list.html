@@ -12,5 +12,13 @@
 </head>
 <body>
     <h1>Wish List Items</h1>
+    <dl>
+    {% for item in item_list %}
+        <dt>{{ item.description }}</dt>
+    {% empty %}
+        <h3>No Wish Items Exist</h3>
+        <hr>
+    {% endfor %}
+    </dl>
 </body>
 </html>
