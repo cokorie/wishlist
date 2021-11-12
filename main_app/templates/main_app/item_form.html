@@ -11,15 +11,12 @@
     <title>Wish List</title>
 </head>
 <body>
-    <h1>Wish List Items</h1>
-    <dl>
-    {% for item in item_list %}
-        <dt>{{ item.description }}</dt>
-    {% empty %}
-        <h3>No Wish Items Exist</h3>
-        <hr>
-    {% endfor %}
-    </dl>
-    <a class="pure-button" href="{% url 'item_create' %}">Add Wish Item</a>
+    <h1>Add Wish Item</h1>
+    <hr>
+    <form class="pure-form" action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="pure-button" type="submit" value="ADD ITEM">
+    </form>
 </body>
 </html>
